@@ -1,3 +1,11 @@
+/*
+Name: Lughnasa Miller
+Date: 9/3/25
+Email: lumiller@hmc.edu
+Description: This module implements the HSOSC oscillator to create a clock pulse, 
+    driving on oscillating LED at 2.4 Hz and also controlling combinational logic for
+    a seven-segment decoder and two LEDs.
+*/
 module lab1_ly(input logic  [3:0] s,
                output logic [2:0] led,
                output logic [6:0] seg);

@@ -1,3 +1,9 @@
+/*
+Name: Lughnasa Miller
+Date: 9/3/25
+Email: lumiller@hmc.edu
+Description: This module implements a testbench for the LED decoder for lab 1.
+*/
 module testbench;
     
     logic pin;

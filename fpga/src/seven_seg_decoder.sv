@@ -1,3 +1,10 @@
+/*
+Name: Lughnasa Miller
+Date: 9/3/25
+Email: lumiller@hmc.edu
+Description: Given a 4 bit switch input, this module determines the 
+    output on a seven-segment display.
+*/
 module seven_seg_decoder(input  logic [3:0] s,
 						 output logic [6:0] seg);
 
