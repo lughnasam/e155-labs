@@ -1,0 +1,108 @@
+m255
+K4
+z2
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+R0
+R1
+!s11f vlog 2024.2 2024.05, May 20 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/lscc/radiant/2024.2/questasim/win64
+T_opt
+!s110 1756972387
+V[2I^biSi9gKlEDnVZ1WhL2
+04 9 4 work testbench fast 0
+=1-00be43eaeac0-68b94563-8-88b4
+R1
+!s12f OEM25U2 
+!s12b OEM100
+!s124 OEM100
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2024.2;79
+vled_decoder
+2C:/Users/lumiller/Documents/e155-lab1/fpga/src/led_decoder.sv
+Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z4 !s110 1756972354
+!i10b 1
+!s100 MedR`Pm;4YgFjkg@7_H;c3
+I^BS_@SQUjGckSbVEEHH8d2
+S1
+Z5 dC:/Users/lumiller/Documents/e155-lab1/fpga/sim
+w1756960108
+8C:/Users/lumiller/Documents/e155-lab1/fpga/src/led_decoder.sv
+FC:/Users/lumiller/Documents/e155-lab1/fpga/src/led_decoder.sv
+!i122 14
+L0 1 9
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 OL;L;2024.2;79
+r1
+!s85 0
+31
+Z8 !s108 1756972354.000000
+!s107 C:/Users/lumiller/Documents/e155-lab1/fpga/src/led_decoder.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/lumiller/Documents/e155-lab1/fpga/src/led_decoder.sv|
+!i113 0
+Z9 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vseven_seg_decoder
+2C:/Users/lumiller/Documents/e155-lab1/fpga/src/seven_seg_decoder.sv
+R3
+!s110 1756970412
+!i10b 1
+!s100 nll118^GC`50iC1ZEC=eX1
+IjY6SDWKG9kE3kC[1XN8?I2
+S1
+R5
+w1756966746
+8C:/Users/lumiller/Documents/e155-lab1/fpga/src/seven_seg_decoder.sv
+FC:/Users/lumiller/Documents/e155-lab1/fpga/src/seven_seg_decoder.sv
+!i122 10
+L0 1 26
+R6
+R7
+r1
+!s85 0
+31
+!s108 1756970412.000000
+!s107 C:/Users/lumiller/Documents/e155-lab1/fpga/src/seven_seg_decoder.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/lumiller/Documents/e155-lab1/fpga/src/seven_seg_decoder.sv|
+!i113 0
+R9
+R2
+vtestbench
+2C:/Users/lumiller/Documents/e155-lab1/fpga/src/led_decoder_tb.sv
+R3
+R4
+!i10b 1
+!s100 3j@[;9CLTMj:B1Kcd>?K=1
+IfHXm_FB6OQD85cHQJ=JJY3
+S1
+R5
+w1756972351
+8C:/Users/lumiller/Documents/e155-lab1/fpga/src/led_decoder_tb.sv
+FC:/Users/lumiller/Documents/e155-lab1/fpga/src/led_decoder_tb.sv
+!i122 15
+L0 1 65
+R6
+R7
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/lumiller/Documents/e155-lab1/fpga/src/led_decoder_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/lumiller/Documents/e155-lab1/fpga/src/led_decoder_tb.sv|
+!i113 0
+R9
+R2

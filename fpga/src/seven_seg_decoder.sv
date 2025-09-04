@@ -1,5 +1,5 @@
 module seven_seg_decoder(input  logic [3:0] s,
-                    output logic [6:0] seg);
+						 output logic [6:0] seg);
 
     always_comb begin
         case(s)
@@ -19,7 +19,7 @@ module seven_seg_decoder(input  logic [3:0] s,
         4'b1101: seg = 7'b100_0010;
         4'b1110: seg = 7'b001_0000;
         4'b1111: seg = 7'b011_1000;
-        default: seg = 7'bxxx_xxxx;
+        default: seg = 7'b111_1111;
         endcase
     end
 

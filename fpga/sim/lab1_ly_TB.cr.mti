@@ -1,0 +1,29 @@
+C:/Users/lumiller/Documents/e155-lab1/fpga/src/led_decoder.sv {1 {vlog -work lab1_ly_TB -vopt -sv -stats=none C:/Users/lumiller/Documents/e155-lab1/fpga/src/led_decoder.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module led_decoder
+
+Top level modules:
+	led_decoder
+
+} {} {}} C:/Users/lumiller/Documents/e155-lab1/fpga/src/seven_seg_decoder.sv {1 {vlog -work lab1_ly_TB -vopt -sv -stats=none C:/Users/lumiller/Documents/e155-lab1/fpga/src/seven_seg_decoder.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module seven_seg_decoder
+
+Top level modules:
+	seven_seg_decoder
+
+} {} {}} C:/Users/lumiller/Documents/e155-lab1/fpga/src/lab1_ly.sv {1 {vlog -work lab1_ly_TB -vopt -sv -stats=none C:/Users/lumiller/Documents/e155-lab1/fpga/src/lab1_ly.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module lab1_ly
+
+Top level modules:
+	lab1_ly
+
+} {} {}} C:/Users/lumiller/Documents/e155-lab1/fpga/src/lab1_ly_tb.sv {1 {vlog -work lab1_ly_TB -vopt -sv -stats=none C:/Users/lumiller/Documents/e155-lab1/fpga/src/lab1_ly_tb.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module testbench
+
+Top level modules:
+	testbench
+
+} {} {}}
