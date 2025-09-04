@@ -1,0 +1,208 @@
+
+                         Lattice Mapping Report File
+
+Design:  led_blinker_2hz
+Family:  iCE40UP
+Device:  iCE40UP5K
+Package: SG48
+Performance Grade:  High-Performance_1.2V
+
+Mapper:    version Radiant Software (64-bit) 2024.2.0.3.0
+Mapped on: Thu Sep  4 10:52:46 2025
+
+Design Information
+------------------
+
+Command line:   map -i lab1_ai_prototype_impl_1_syn.udb -o
+     lab1_ai_prototype_impl_1_map.udb -mp lab1_ai_prototype_impl_1.mrp -hierrpt
+     -gui -msgset C:/Users/lumiller/Documents/e155-lab1/ai_prototype/lab1_ai_pro
+     totype/promote.xml
+
+Design Summary
+--------------
+
+   Number of slice registers:  26 out of  5280 (<1%)
+   Number of I/O registers:      0 out of   117 (0%)
+   Number of LUT4s:            36 out of  5280 (1%)
+      Number of logic LUT4s:              10
+      Number of ripple logic:             13 (26 LUT4s)
+   Number of IO sites used:   1 out of 39 (3%)
+      Number of IO sites used for general PIO: 1
+      Number of IO sites used for I3C: 0 out of 2 (0%)
+      (note: If I3C is not used, its site can be used as general PIO)
+      Number of IO sites used for PIO+I3C: 1 out of 36 (3%)
+      Number of IO sites used for OD+RGB IO buffers: 0 out of 3 (0%)
+      (note: If RGB LED drivers are not used, sites can be used as OD outputs,
+       see TN1288 iCE40 LED Driver Usage Guide)
+      Number of IO sites used for PIO+I3C+OD+RGB: 1 out of 39 (3%)
+   Number of DSPs:             0 out of 8 (0%)
+   Number of I2Cs:             0 out of 2 (0%)
+   Number of High Speed OSCs:  1 out of 1 (100%)
+   Number of Low Speed OSCs:   0 out of 1 (0%)
+   Number of RGB PWM:          0 out of 1 (0%)
+   Number of RGB Drivers:      0 out of 1 (0%)
+   Number of SCL FILTERs:      0 out of 2 (0%)
+   Number of SRAMs:            0 out of 4 (0%)
+   Number of WARMBOOTs:        0 out of 1 (0%)
+   Number of SPIs:             0 out of 2 (0%)
+   Number of EBRs:             0 out of 30 (0%)
+   Number of PLLs:             0 out of 1 (0%)
+   Number of Clocks:  1
+      Net clk_hsosc: 14 loads, 14 rising, 0 falling (Driver: Pin
+     hsosc_inst.osc_inst/CLKHF)
+   Number of Clock Enables:  1
+      Net VCC_net: 1 loads, 0 SLICEs
+   Number of LSRs:  1
+      Net n174: 13 loads, 13 SLICEs
+   Top 10 highest fanout non-clock nets:
+      Net n174: 14 loads
+      Net VCC_net: 3 loads
+      Net counter[10]: 2 loads
+      Net counter[13]: 2 loads
+      Net counter[1]: 2 loads
+
+                                    Page 1
+
+
+
+
+
+Design Summary (cont)
+---------------------
+      Net counter[23]: 2 loads
+      Net counter[24]: 2 loads
+      Net counter[4]: 2 loads
+      Net led_c: 2 loads
+      Net n232: 2 loads
+
+
+
+
+
+   Number of warnings:  0
+   Number of criticals: 0
+   Number of errors:    0
+
+Design Errors/Criticals/Warnings
+--------------------------------
+
+   No error, critical, or warning presents.
+
+IO (PIO) Attributes
+-------------------
+
++---------------------+-----------+-----------+-------+-------+-----------+
+| IO Name             | Direction | Levelmode |  IO   |  IO   | Special   |
+|                     |           |  IO_TYPE  |  REG  |  DDR  | IO Buffer |
++---------------------+-----------+-----------+-------+-------+-----------+
+| led                 | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+Removed logic
+-------------
+
+Block i1 was optimized away.
+
+OSC Summary
+-----------
+
+OSC 1:                                 Pin/Node Value
+  OSC Instance Name:                            hsosc_inst.osc_inst
+  Power UP:                            NODE     VCC_net
+  Enable Signal:                       NODE     VCC_net
+  OSC Output:                          NODE     clk_hsosc
+  DIV Setting:                                  00
+
+ASIC Components
+---------------
+
+Instance Name: hsosc_inst.osc_inst
+         Type: HFOSC
+
+Constraint Summary
+------------------
+
+   Total number of constraints: 1
+   Total number of constraints dropped: 0
+
+
+
+
+                                    Page 2
+
+
+
+
+
+Run Time and Memory Usage
+-------------------------
+
+   Total CPU Time: 0 secs
+   Total REAL Time: 0 secs
+   Peak Memory Usage: 65 MB
+Checksum -- map: 8e841b042fe1f45076972e35d814441f13be2afc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    Page 3
+
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995
+     AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent
+     Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems
+     All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor
+     Corporation,  All rights reserved.
