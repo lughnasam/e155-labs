@@ -1,0 +1,8 @@
+#Start recording tcl command: 9/4/2025 10:50:45
+#Project Location: C:/Users/lumiller/Documents/e155-lab1/ai_prototype/lab1_ai_prototype; Project name: lab1_ai_prototype
+prj_create -name "lab1_ai_prototype" -impl "impl_1" -dev iCE40UP5K-SG48I -performance "High-Performance_1.2V" -synthesis "lse"
+prj_save 
+prj_add_source "C:/Users/lumiller/Documents/e155-lab1/ai_prototype/lab1_ai_prototype/source/impl_1/ai_proto.sv"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+#Stop recording: 9/4/2025 11:58:04
