@@ -1,0 +1,22 @@
+C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/seven_seg_decoder.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/seven_seg_decoder.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module seven_seg_decoder
+
+Top level modules:
+	seven_seg_decoder
+
+} {} {}} C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/counter.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/counter.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module counter
+
+Top level modules:
+	counter
+
+} {} {}} C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/ff_enabled.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/ff_enabled.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module ff_enabled
+
+Top level modules:
+	ff_enabled
+
+} {} {}}

@@ -1,0 +1,219 @@
+m255
+K4
+z2
+Z0 !s12c _opt2
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+!s12c _opt1
+R1
+!s12c _opt
+R1
+!s11f vlog 2024.2 2024.05, May 20 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z2 dC:/lscc/radiant/2024.2/questasim/win64
+T_opt
+!s110 1757580196
+V6f<hB@YW3FUk?=3`Dah6@1
+04 7 4 work lab2_ly fast 0
+=1-00be43eaeac0-68c28ba4-6a-385c
+R1
+!s12f OEM25U5 
+Z3 !s12b OEM100
+Z4 !s124 OEM100
+Z5 !s135 nogc
+Z6 o-quiet -auto_acc_if_foreign -work work +acc -L iCE40UP
+Z7 tCvgOpt 0
+n@_opt
+Z8 OL;O;2024.2;79
+R2
+T_opt1
+!s110 1757580500
+VSe8`66QO9z>]<Nd;0oO<03
+04 9 4 work testbench fast 0
+=1-00be43eaeac0-68c28cd4-1b9-550
+R1
+Z9 !s12f OEM25U6 
+R3
+R4
+R5
+R6
+R7
+n@_opt1
+R8
+R2
+T_opt2
+!s110 1757581601
+VlhMfL;ZX:Imc]M_g<]D0V0
+04 10 4 work lab2_ly_tb fast 0
+=10-00be43eaeac0-68c29121-8e-3bfc
+R1
+R9
+R3
+R4
+R5
+R6
+R7
+n@_opt2
+R8
+vcounter
+2C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/counter.sv
+Z10 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z11 !s110 1757581594
+!i10b 1
+!s100 TdVH9RgQW4ANXBLczc3Lg2
+I3G:miF[aja<md4d=bb^eH3
+S1
+Z12 dC:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/sim
+Z13 w1757570021
+8C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/counter.sv
+FC:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/counter.sv
+!i122 73
+L0 8 12
+Z14 VDg1SIo80bB@j0V0VzS_@n1
+Z15 OL;L;2024.2;79
+r1
+!s85 0
+31
+Z16 !s108 1757581594.000000
+!s107 C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/counter.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/counter.sv|
+!i113 0
+Z17 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R7
+vff_enabled
+2C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/ff_enabled.sv
+R10
+R11
+!i10b 1
+!s100 zGUV0i3NDeOYjQIQOUIP00
+IOEQ0V2D=X5=OI[nMPz>Z^3
+S1
+R12
+w1757580974
+8C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/ff_enabled.sv
+FC:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/ff_enabled.sv
+!i122 74
+L0 7 12
+R14
+R15
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/ff_enabled.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/ff_enabled.sv|
+!i113 0
+R17
+R7
+vlab2_ly
+2C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/lab2_ly.sv
+R10
+R11
+!i10b 1
+!s100 >C`;Abi1:hz[fo2__<:512
+IVlgm^05][k@n=3?fMQnhU3
+S1
+R12
+w1757581591
+8C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/lab2_ly.sv
+FC:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/lab2_ly.sv
+!i122 75
+L0 7 30
+R14
+R15
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/lab2_ly.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/lab2_ly.sv|
+!i113 0
+R17
+R7
+vlab2_ly_tb
+Z18 2C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/lab2_ly_tb.sv
+R10
+Z19 !s110 1757581595
+!i10b 1
+!s100 AMG]=jBoV9i]MO<mK4>GH1
+IjS<227hFW2g9_dm1bn4BV0
+S1
+R12
+w1757581592
+Z20 8C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/lab2_ly_tb.sv
+Z21 FC:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/lab2_ly_tb.sv
+!i122 76
+L0 10 27
+R14
+R15
+r1
+!s85 0
+31
+R16
+Z22 !s107 C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/lab2_ly_tb.sv|
+Z23 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/lab2_ly_tb.sv|
+!i113 0
+R17
+R7
+vseven_seg_decoder
+2C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/seven_seg_decoder.sv
+R10
+R19
+!i10b 1
+!s100 k_QWR>kDi0f3GnJbS=KfK2
+I[^^oG@aF=dGG`CF9j>;a[3
+S1
+R12
+R13
+8C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/seven_seg_decoder.sv
+FC:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/seven_seg_decoder.sv
+!i122 77
+L0 8 26
+R14
+R15
+r1
+!s85 0
+31
+!s108 1757581595.000000
+!s107 C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/seven_seg_decoder.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/seven_seg_decoder.sv|
+!i113 0
+R17
+R7
+vtestbench
+R18
+R10
+!s110 1757580489
+!i10b 1
+!s100 UeYO73^^=fYz`50j]NO5d0
+IgZh_o2NN79SoM;Yckl=3o2
+S1
+R12
+w1757580484
+R20
+R21
+!i122 42
+L0 10 25
+R14
+R15
+r1
+!s85 0
+31
+!s108 1757580489.000000
+R22
+R23
+!i113 0
+R17
+R7
