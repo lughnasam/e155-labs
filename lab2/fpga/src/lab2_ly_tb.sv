@@ -2,7 +2,7 @@
 Name: Lughnasa Miller
 Date: 9/10/25
 Email: lumiller@hmc.edu
-Description: 
+Description: Testbench for top level module of lab 2
 */
 
 `timescale 1ns/1ns
@@ -14,7 +14,7 @@ logic [4:0] sum, led;
 logic [6:0] display;
 logic reset, lpwr, rpwr;
 
-lab2_ly dut(.reset(reset), .sw0(sw0), .sw1(sw1), .l_seg_pwr(lpwr), .r_seg_pwr(rpwr), .led(led));
+lab2_ly dut(.reset(reset), .sw0(sw0), .sw1(sw1), .l_seg_pwr(lpwr), .r_seg_pwr(rpwr), .led(led), .segout(display));
 
 initial begin
     reset = 1; #22;
@@ -31,6 +31,5 @@ initial begin
     end
 
     #1000000;
-    $finish;
 end
 endmodule

@@ -20,13 +20,12 @@
 				<BScanVal>0</BScanVal>
 			</Bypass>
 			<File>../../impl_1/lab2_ly_impl_1.bin</File>
-			<FileTime>09/11/25 00:15:47</FileTime>
+			<FileTime>09/11/25 00:31:49</FileTime>
 			<MemoryType>Compressed Random Access Memory (CRAM)</MemoryType>
 			<Operation>Fast Configuration</Operation>
 			<Option>
 				<SVFVendor>JTAG STANDARD</SVFVendor>
 				<IOState>HighZ</IOState>
-				<SVFProcessor>SVF Processor</SVFProcessor>
 				<AccessMode>Direct Programming</AccessMode>
 			</Option>
 		</Device>
