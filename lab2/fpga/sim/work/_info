@@ -1,21 +1,33 @@
 m255
 K4
 z2
-Z0 !s12c _opt2
+Z0 !s12c _opt
 Z1 !s99 nomlopt
 R0
 R1
 R0
 R1
-R0
+Z2 !s12c _opt2
 R1
-R0
+R2
 R1
-R0
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
 R1
 !s12c _opt1
 R1
-!s12c _opt
+R0
 R1
 !s11f vlog 2024.2 2024.05, May 20 2024
 13
@@ -24,29 +36,43 @@ R1
 !i10e 25
 !i10f 100
 cModel Technology
-Z2 dC:/lscc/radiant/2024.2/questasim/win64
+Z3 dC:/lscc/radiant/2024.2/questasim/win64
+T_opt
+!s110 1757621322
+VoE0Sc6`2b;a=375_CCh6g3
+04 13 4 work ff_enabled_tb fast 0
+=3-00be43eaeac0-68c32c4a-314-28cc
+R1
+!s12f OEM25U2 
+Z4 !s12b OEM100
+Z5 !s124 OEM100
+Z6 !s135 nogc
+Z7 o-quiet -auto_acc_if_foreign -work work +acc -L iCE40UP
+Z8 tCvgOpt 0
+n@_opt
+Z9 OL;O;2024.2;79
 T_opt1
 !s110 1757580500
 VSe8`66QO9z>]<Nd;0oO<03
 04 9 4 work testbench fast 0
 =1-00be43eaeac0-68c28cd4-1b9-550
 R1
-Z3 !s12f OEM25U6 
-Z4 !s12b OEM100
-Z5 !s124 OEM100
-Z6 !s135 nogc
-Z7 o-quiet -auto_acc_if_foreign -work work +acc -L iCE40UP
-Z8 tCvgOpt 0
+Z10 !s12f OEM25U6 
+R4
+R5
+R6
+R7
+R8
 n@_opt1
-Z9 OL;O;2024.2;79
-R2
-T_opt2
-!s110 1757582181
-VdzX>e`nfLB8]YBUTI3h2U2
-04 10 4 work lab2_ly_tb fast 0
-=1-00be43eaeac0-68c29364-39d-1e8
-R1
+R9
 R3
+T_opt2
+!s110 1757620952
+VJS;AJdB9^i^iTzI0A9Xh_3
+04 10 4 work lab2_ly_tb fast 0
+=6-00be43eaeac0-68c32ad8-2f7-384
+R1
+R10
 R4
 R5
 R6
@@ -54,26 +80,27 @@ R7
 R8
 n@_opt2
 R9
+R3
 vcounter
 2C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/counter.sv
-Z10 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z11 !s110 1757582142
+Z11 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z12 !s110 1757621313
 !i10b 1
-!s100 TdVH9RgQW4ANXBLczc3Lg2
-I3G:miF[aja<md4d=bb^eH3
+!s100 >E4L?5Jzfz^kTbb_05C`43
+ISBk=K8e?l627o7V9n4aU[1
 S1
-Z12 dC:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/sim
-Z13 w1757570021
+Z13 dC:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/sim
+w1757618878
 8C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/counter.sv
 FC:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/counter.sv
-!i122 88
+!i122 137
 L0 8 12
 Z14 VDg1SIo80bB@j0V0VzS_@n1
 Z15 OL;L;2024.2;79
 r1
 !s85 0
 31
-Z16 !s108 1757582142.000000
+Z16 !s108 1757621313.000000
 !s107 C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/counter.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/counter.sv|
 !i113 0
@@ -81,17 +108,17 @@ Z17 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R8
 vff_enabled
 2C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/ff_enabled.sv
-R10
 R11
-!i10b 1
-!s100 zGUV0i3NDeOYjQIQOUIP00
-IOEQ0V2D=X5=OI[nMPz>Z^3
-S1
 R12
-w1757580974
+!i10b 1
+!s100 [1b<F5;]iJJBFQM_Um>_92
+IlQX2QRk`EJeSZ>FhU4L>>0
+S1
+R13
+w1757619076
 8C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/ff_enabled.sv
 FC:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/ff_enabled.sv
-!i122 89
+!i122 138
 L0 7 12
 R14
 R15
@@ -104,19 +131,44 @@ R16
 !i113 0
 R17
 R8
+vff_enabled_tb
+2C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/ff_enabled_tb.sv
+R11
+R12
+!i10b 1
+!s100 WKe7ecP8J@[RLX6AUjV;O1
+I=<hV^1KYDAEC]NacN7H]l3
+S1
+R13
+w1757621307
+8C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/ff_enabled_tb.sv
+FC:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/ff_enabled_tb.sv
+!i122 142
+L0 7 26
+R14
+R15
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/ff_enabled_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/ff_enabled_tb.sv|
+!i113 0
+R17
+R8
 vlab2_ly
 2C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/lab2_ly.sv
-R10
-Z18 !s110 1757582143
+R11
+R12
 !i10b 1
 !s100 >C`;Abi1:hz[fo2__<:512
 IVlgm^05][k@n=3?fMQnhU3
 S1
-R12
+R13
 w1757581591
 8C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/lab2_ly.sv
 FC:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/lab2_ly.sv
-!i122 90
+!i122 139
 L0 7 30
 R14
 R15
@@ -130,67 +182,67 @@ R16
 R17
 R8
 vlab2_ly_tb
-Z19 2C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/lab2_ly_tb.sv
-R10
-R18
-!i10b 1
-!s100 O7e6@R[e_eAO7BUAgjd?E2
-IbD:7?]ZXmM5ViJCi_bkS=3
-S1
+Z18 2C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/lab2_ly_tb.sv
+R11
 R12
-w1757582124
-Z20 8C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/lab2_ly_tb.sv
-Z21 FC:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/lab2_ly_tb.sv
-!i122 91
-L0 10 26
+!i10b 1
+!s100 2MkKNJ[dm6EM>Cb?dz;3M2
+IikMNgi37G;]lY]2SgcU3T1
+S1
+R13
+w1757620929
+Z19 8C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/lab2_ly_tb.sv
+Z20 FC:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/lab2_ly_tb.sv
+!i122 140
+L0 10 31
 R14
 R15
 r1
 !s85 0
 31
-Z22 !s108 1757582143.000000
-Z23 !s107 C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/lab2_ly_tb.sv|
-Z24 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/lab2_ly_tb.sv|
+R16
+Z21 !s107 C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/lab2_ly_tb.sv|
+Z22 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/lab2_ly_tb.sv|
 !i113 0
 R17
 R8
 vseven_seg_decoder
 2C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/seven_seg_decoder.sv
-R10
-R18
+R11
+R12
 !i10b 1
 !s100 k_QWR>kDi0f3GnJbS=KfK2
 I[^^oG@aF=dGG`CF9j>;a[3
 S1
-R12
 R13
+w1757570021
 8C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/seven_seg_decoder.sv
 FC:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/seven_seg_decoder.sv
-!i122 92
+!i122 141
 L0 8 26
 R14
 R15
 r1
 !s85 0
 31
-R22
+R16
 !s107 C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/seven_seg_decoder.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/lumiller/Documents/e155labs/e155-labs/lab2/fpga/src/seven_seg_decoder.sv|
 !i113 0
 R17
 R8
 vtestbench
-R19
-R10
+R18
+R11
 !s110 1757580489
 !i10b 1
 !s100 UeYO73^^=fYz`50j]NO5d0
 IgZh_o2NN79SoM;Yckl=3o2
 S1
-R12
+R13
 w1757580484
+R19
 R20
-R21
 !i122 42
 L0 10 25
 R14
@@ -199,8 +251,8 @@ r1
 !s85 0
 31
 !s108 1757580489.000000
-R23
-R24
+R21
+R22
 !i113 0
 R17
 R8

@@ -17,8 +17,8 @@ logic reset, lpwr, rpwr;
 lab2_ly dut(.reset(reset), .sw0(sw0), .sw1(sw1), .l_seg_pwr(lpwr), .r_seg_pwr(rpwr), .led(led), .segout(display));
 
 initial begin
-    reset = 1; #22;
-    reset = 0;
+    reset = 0; #22;
+    reset = 1;
     for (int i = 0; i < 16; i++) begin
         for (int j = 0; j < 16; j++) begin
             #40;
@@ -29,7 +29,12 @@ initial begin
             assert(sum == led) else $error();
         end
     end
+    
+    while (rpwr) begin
+        #1;
+    end
 
-    #1000000;
+    #1000;
+    
 end
 endmodule
