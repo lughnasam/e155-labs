@@ -11,7 +11,7 @@ module ff_enabled
       output logic [WIDTH-1:0] q);
 
 always_ff @(posedge clk) begin
-    if (reset) q <= 0;
+    if (~reset) q <= 0;
     else if (enable) q <= d;
 end
 
