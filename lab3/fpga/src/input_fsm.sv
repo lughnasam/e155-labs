@@ -39,8 +39,8 @@ module input_fsm(input clk, reset,
 	
 	// state register
 	always_ff @(posedge clk, posedge reset) begin
-		if (reset) state <= row0_pwr;
-		else       state <= next_state;
+		if (~reset) state <= row0_pwr;
+		else        state <= next_state;
 	end
 	
 	// next state logic
