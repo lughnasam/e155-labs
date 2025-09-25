@@ -21,11 +21,9 @@ module lab3_lm(input logic reset,
     assign l_seg_pwr = c_val[17];
     assign r_seg_pwr = ~c_val[17];
 
-    synchronizer (.WIDTH(4)) sync(.clk(clk), .reset(reset), .d(cur_press, cur_in));
-
     // shift register setup to store previous two outputs
-    ff_enabled #(.WIDTH(4)) ff_r(.clk(clk), .reset(reset), .enable(shift_state), .d(cur_in), .q(cur_num));
-    ff_enabled #(.WIDTH(4)) ff_l(.clk(clk), .reset(reset), .enable(shift_state), .d(cur_num), .q(prev_num));
+    ff_enabled #(.WIDTH(4)) ff_r(.clk(clk), .reset(reset), .enable(new_key), .d(cur_in), .q(cur_num));
+    ff_enabled #(.WIDTH(4)) ff_l(.clk(clk), .reset(reset), .enable(new_key), .d(cur_num), .q(prev_num));
 
     // when ctr[17] == 1, power and output left side, else power and output right
     assign lpwr = c_val[17];
