@@ -1,5 +1,5 @@
 <!DOCTYPE CrossStudio_Project_File>
-<solution Name="lab5_lm" target="8" version="2">
+<solution Name="lab5_ly" target="8" version="2">
   <configuration
     Name="Debug"
     c_preprocessor_definitions="DEBUG"
@@ -12,7 +12,7 @@
     gcc_debugging_level="Level 2"
     gcc_omit_frame_pointer="Yes"
     gcc_optimization_level="Level 2 balanced" />
-  <project Name="lab5_lm">
+  <project Name="lab5_ly">
     <configuration
       LIBRARY_IO_TYPE="RTT"
       Name="Common"
@@ -59,7 +59,7 @@
     </folder>
     <folder Name="Source Files">
       <configuration Name="Common" filter="c;cpp;cxx;cc;h;s;asm;inc" />
-      <file file_name="../src/lab4_starter.c" />
+      <file file_name="../src/main.c" />
       <file file_name="../src/STM32L432KC_FLASH.c" />
       <file file_name="../src/STM32L432KC_FLASH.h" />
       <file file_name="../src/STM32L432KC_GPIO.c" />

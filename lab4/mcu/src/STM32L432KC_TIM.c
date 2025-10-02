@@ -3,6 +3,7 @@
 
 #include "STM32L432KC_TIM.h"
 #include "STM32L432KC_RCC.h"
+
 #define PWM_PSC 16
 
 void initTIM(TIM_TypeDef * TIMx){
