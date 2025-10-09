@@ -22,7 +22,6 @@ int main(void) {
     pinMode(QE_B_PIN, GPIO_INPUT);
     GPIOA->PUPDR &= ~(_VAL2FLD(GPIO_PUPDR_PUPD2, 0b11));
     GPIOA->PUPDR |= (_VAL2FLD(GPIO_PUPDR_PUPD2, 0b01));
-    
 
     // enable SYSCFG clock domain
     RCC->APB2ENR |= RCC_APB2ENR_SYSCFGEN; //
@@ -77,10 +76,15 @@ int main(void) {
     }
 }
 
-
+/*
+This function handles interrupts from pin PA1
+It is called on the positive and negative edge of PA1 
+It increments an edge counter for a quadrature encoder and checks direction of rotation
+*/
 void EXTI1_IRQHandler(void){
     // increment edge counter
     if (EXTI->PR1 & (1 << 1)){
+        
         edge_count++;
     
         // if this edge triggers twice (turns around), 
@@ -94,10 +98,16 @@ void EXTI1_IRQHandler(void){
 
         // clear the pending interrupt
         EXTI->PR1 |= (1 << 1);
+
 }
     return;
 }
 
+/*
+This function handles interrupts from pin PA2
+It is called on the positive and negative edge of PA2 
+It increments an edge counter for a quadrature encoder and checks direction of rotation
+*/
 void EXTI2_IRQHandler(void){
     // increment edge counter
     if (EXTI->PR1 & (1 << 2)){
