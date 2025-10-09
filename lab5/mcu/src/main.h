@@ -13,9 +13,10 @@ Description: main header file for lab 5
 #include <stm32l432xx.h>
 
 // pins of relevance
-#define QE_A_PIN PA0
-#define QE_B_PIN PB1
+#define QE_A_PIN PA1
+#define QE_B_PIN PA2
 #define DELAY_TIM TIM2
 #define LOOP_TIME 1000
+#define PPR 408
 
 #endif

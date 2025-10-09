@@ -16,9 +16,9 @@ void initTIM(TIM_TypeDef * TIMx){
   TIMx->CR1 |= 1; // Set CEN = 1
 }
 
-void initTIMwINT(TIM_TypeDef TIMx, uint32_t cycle_time){
+// void initTIMwINT(TIM_TypeDef TIMx, uint32_t cycle_time){
   
-}
+// }
 
 void delay_millis(TIM_TypeDef * TIMx, uint32_t ms){
   TIMx->ARR = ms;     // Set timer max count
