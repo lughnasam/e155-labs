@@ -1,5 +1,12 @@
 // DS1722.c
-// TODO: <YOUR NAME>
-// TODO: <YOUR EMAIL>
-// TODO: <DATE>
-// TODO: <SHORT DESCRIPTION OF WHAT THIS FILE DOES>
+// Lughnasa Miller
+// lumiller@hmc.edu
+// 23.10.25
+// This file is a driver for reading temperature from a DS1722 board
+
+#include "STM32L432KC_SPI.h"
+
+// This function initializes SPI communication on the DS1722 board
+ds1722_init(){
+    
+}

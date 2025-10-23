@@ -65,7 +65,7 @@ int main(void) {
   
   USART_TypeDef * USART = initUSART(USART1_ID, 125000);
 
-  // TODO: Add SPI initialization code
+  initSPI(3, 0, 0);
 
   while(1) {
     /* Wait for ESP8266 to send a request.
@@ -84,7 +84,7 @@ int main(void) {
       request[charIndex++] = readChar(USART);
     }
 
-    // TODO: Add SPI code here for reading temperature
+    
   
     // Update string with current LED state
   
@@ -95,16 +95,27 @@ int main(void) {
       sprintf(ledStatusStr,"LED is on!");
     else if (led_status == 0)
       sprintf(ledStatusStr,"LED is off!");
+    
+
+    // read and update temperature
+    char tempReadStr[20];
+
+
 
     // finally, transmit the webpage over UART
     sendString(USART, webpageStart); // webpage header code
     sendString(USART, ledStr); // button for controlling LED
 
+    //led status
     sendString(USART, "<h2>LED Status</h2>");
-
-
     sendString(USART, "<p>");
     sendString(USART, ledStatusStr);
+    sendString(USART, "</p>");
+
+    //temp status
+    sendString(USART, "<h2>Temperature Status</h2>")
+    sendString(USART, "<p>");
+    sendString(USART, tempReadStr);
     sendString(USART, "</p>");
 
   

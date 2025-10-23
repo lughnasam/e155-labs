@@ -1,5 +1,8 @@
 // DS1722.h
-// TODO: <YOUR NAME>
-// TODO: <YOUR EMAIL>
-// TODO: <DATE>
-// TODO: <SHORT DESCRIPTION OF WHAT THIS FILE DOES>
+// Lughnasa Miller
+// lumiller@hmc.edu
+// 23.10.25
+// This file is a driver for reading temperature from a DS1722 board
+
+ds1722_init();
+ds1722_temp_read();
