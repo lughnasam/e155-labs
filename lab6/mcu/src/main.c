@@ -148,7 +148,7 @@ int main(void) {
     sendString(USART, "</p>");
 
     //temp status
-    sendString(USART, "<h2>Temperature Status</h2>")
+    sendString(USART, "<h2>Temperature Status</h2>");
     sendString(USART, "<p>");
     sendString(USART, tempReadStr);
     sendString(USART, "</p>");
