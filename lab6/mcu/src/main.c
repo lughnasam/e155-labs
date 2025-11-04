@@ -22,6 +22,11 @@ char* webpageStart = "<!DOCTYPE html><html><head><title>E155 Web Server Demo Web
 	<body><h1>E155 Web Server Demo Webpage</h1>";
 char* ledStr = "<p>LED Control:</p><form action=\"ledon\"><input type=\"submit\" value=\"Turn the LED on!\"></form>\
 	<form action=\"ledoff\"><input type=\"submit\" value=\"Turn the LED off!\"></form>";
+char* precisionStr = "<p>Precision Types:</p><form action=\"8biton\"><input type=\"submit\" value=\"8-bit\"></form>\
+  <form action=\"9biton\"><input type=\"submit\" value=\"9-bit\"></form>\
+  <form action=\"10biton\"><input type=\"submit\" value=\"10-bit\"></form>\
+  <form action=\"11biton\"><input type=\"submit\" value=\"11-bit\"></form>\
+  <form action=\"12biton\"><input type=\"submit\" value=\"12-bit\"></form>";
 char* webpageEnd   = "</body></html>";
 
 //determines whether a given character sequence is in a char array request, returning 1 if present, -1 if not present
@@ -46,6 +51,28 @@ int updateLEDStatus(char request[])
 	return led_status;
 }
 
+int updateReqStatus(char request[]) {
+  int precStatus = 0;
+  if (inString(request, "8biton") == 1) {
+    ds1722_init(8);
+    precStatus = 8;
+  } else if (inString(request, "9biton") == 1) {
+    ds1722_init(9);
+    precStatus = 9;
+  } else if (inString(request, "10biton") == 1) {
+    ds1722_init(10);
+    precStatus = 10;
+  } else if (inString(request, "11biton") == 1) {
+    ds1722_init(11);
+    precStatus = 11;
+  } else if (instring(request, "12biton") == 1) {
+    ds1722_init(12);
+    precStatus = 12;
+  }
+
+  return precStatus;
+}
+
 /////////////////////////////////////////////////////////////////
 // Solution Functions
 /////////////////////////////////////////////////////////////////
@@ -66,6 +93,8 @@ int main(void) {
   USART_TypeDef * USART = initUSART(USART1_ID, 125000);
 
   initSPI(3, 0, 0);
+
+  ds1722_init(9);
 
   while(1) {
     /* Wait for ESP8266 to send a request.
@@ -96,16 +125,21 @@ int main(void) {
     else if (led_status == 0)
       sprintf(ledStatusStr,"LED is off!");
     
+    updateReqStatus(request);
     
     
     // read and update temperature
-    char tempReadStr[20];
+    char tempReadStr[30];
+    float temperature = ds1722_temp_read();
+
+    sprintf(tempReadStr, "Temp. is %.4f deg. C", temperature);
 
 
 
     // finally, transmit the webpage over UART
     sendString(USART, webpageStart); // webpage header code
-    sendString(USART, ledStr); // button for controlling LED
+    sendString(USART, ledStr); // buttons for controlling LED
+    sendString(USART, precisionStr); // buttons for controlling precision
 
     //led status
     sendString(USART, "<h2>LED Status</h2>");
@@ -118,7 +152,6 @@ int main(void) {
     sendString(USART, "<p>");
     sendString(USART, tempReadStr);
     sendString(USART, "</p>");
-
   
     sendString(USART, webpageEnd);
   }

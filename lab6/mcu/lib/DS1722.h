@@ -4,5 +4,10 @@
 // 23.10.25
 // This file is a driver for reading temperature from a DS1722 board
 
-void ds1722_init();
+#include "STM32L432KC.h"
+#include "STM32L432KC_SPI.h"
+
+#define 
+
+void ds1722_init(int precision);
 void ds1722_temp_read();
