@@ -96,7 +96,8 @@ int main(void) {
     else if (led_status == 0)
       sprintf(ledStatusStr,"LED is off!");
     
-
+    
+    
     // read and update temperature
     char tempReadStr[20];
 

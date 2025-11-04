@@ -7,6 +7,11 @@
 #include "STM32L432KC_SPI.h"
 
 // This function initializes SPI communication on the DS1722 board
-ds1722_init(){
+void ds1722_init(){
     
 }
+
+float ds1722_temp_read(int bits) {
+
+}
+
