@@ -30,25 +30,32 @@ void ds1722_init(int precision){
             enable = 0xE2;
 
     }
-
+    
+    digitalWrite(SPI_CE, PIO_LOW);
     digitalWrite(SPI_CE, PIO_HIGH);
-    spiSendReceive(0x00); // csr address
+    spiSendReceive(0x80); // csr address
     spiSendReceive(enable);
     digitalWrite(SPI_CE, PIO_LOW);
 }
 
-float ds1722_temp_read() {
+float ds1722_temp_read(void) {
     //read upper bits
     digitalWrite(SPI_CE, PIO_HIGH);
-    char upper = spiSendReceive(0x02);
+    spiSendReceive(0x02);
+    char upper = spiSendReceive(0x00);
     digitalWrite(SPI_CE, PIO_LOW);
+    printf("upper: %d\n", upper);
 
     //read lower bits
     digitalWrite(SPI_CE, PIO_HIGH);
+    spiSendReceive(0x01);
     char lower = spiSendReceive(0x01);
     digitalWrite(SPI_CE, PIO_LOW);
+    printf("lower: %d\n", lower);
 
-    float out = (float) upper + ((float) lower / 256.0);
-    return out;
+    int16_t temp = ((int16_t) upper << 8) | ((int16_t) lower);
+    float tempOut = (((float) temp) / 256.0);
+   
+    return tempOut;
 }
 

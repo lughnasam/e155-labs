@@ -7,7 +7,6 @@
 #include "STM32L432KC.h"
 #include "STM32L432KC_SPI.h"
 
-#define 
 
 void ds1722_init(int precision);
-void ds1722_temp_read();
+float ds1722_temp_read(void);

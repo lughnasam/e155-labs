@@ -52,25 +52,24 @@ int updateLEDStatus(char request[])
 }
 
 int updateReqStatus(char request[]) {
-  int precStatus = 0;
-  if (inString(request, "8biton") == 1) {
-    ds1722_init(8);
-    precStatus = 8;
-  } else if (inString(request, "9biton") == 1) {
-    ds1722_init(9);
-    precStatus = 9;
-  } else if (inString(request, "10biton") == 1) {
-    ds1722_init(10);
-    precStatus = 10;
-  } else if (inString(request, "11biton") == 1) {
-    ds1722_init(11);
-    precStatus = 11;
-  } else if (instring(request, "12biton") == 1) {
-    ds1722_init(12);
-    precStatus = 12;
-  }
-
-  return precStatus;
+ int precStatus = 0;
+ if (inString(request, "8biton") == 1) {
+   ds1722_init(BITRES_8);
+   precStatus = 8;
+ } else if (inString(request, "9biton") == 1) {
+   ds1722_init(BITRES_9);
+   precStatus = 9;
+ } else if (inString(request, "10biton") == 1) {
+   ds1722_init(BITRES_10);
+   precStatus = 10;
+ } else if (inString(request, "11biton") == 1) {
+   ds1722_init(BITRES_11);
+   precStatus = 11;
+ } else if (inString(request, "12biton") == 1) {
+   ds1722_init(BITRES_12);
+   precStatus = 12;
+ }
+ return precStatus;
 }
 
 /////////////////////////////////////////////////////////////////
@@ -85,14 +84,14 @@ int main(void) {
   gpioEnable(GPIO_PORT_B);
   gpioEnable(GPIO_PORT_C);
 
-  pinMode(PB3, GPIO_OUTPUT);
+  pinMode(LED_PIN, GPIO_OUTPUT);
   
   RCC->APB2ENR |= (RCC_APB2ENR_TIM15EN);
   initTIM(TIM15);
   
   USART_TypeDef * USART = initUSART(USART1_ID, 125000);
 
-  initSPI(3, 0, 0);
+  initSPI(0b011, 0, 1);
 
   ds1722_init(9);
 
@@ -113,7 +112,12 @@ int main(void) {
       request[charIndex++] = readChar(USART);
     }
 
-    
+    // read and update temperature
+    char tempReadStr[30];
+    float temperature = ds1722_temp_read();
+    printf("%f\n", temperature);
+
+    sprintf(tempReadStr, "Temp. is %.4f deg. C", temperature);
   
     // Update string with current LED state
   
@@ -124,34 +128,26 @@ int main(void) {
       sprintf(ledStatusStr,"LED is on!");
     else if (led_status == 0)
       sprintf(ledStatusStr,"LED is off!");
-    
+
     updateReqStatus(request);
-    
-    
-    // read and update temperature
-    char tempReadStr[30];
-    float temperature = ds1722_temp_read();
-
-    sprintf(tempReadStr, "Temp. is %.4f deg. C", temperature);
-
-
 
     // finally, transmit the webpage over UART
     sendString(USART, webpageStart); // webpage header code
-    sendString(USART, ledStr); // buttons for controlling LED
-    sendString(USART, precisionStr); // buttons for controlling precision
-
-    //led status
+    sendString(USART, ledStr); // button for controlling LED
+    sendString(USART, precisionStr);
+  
+    // LED status message
     sendString(USART, "<h2>LED Status</h2>");
     sendString(USART, "<p>");
     sendString(USART, ledStatusStr);
     sendString(USART, "</p>");
 
-    //temp status
+        //temp status
     sendString(USART, "<h2>Temperature Status</h2>");
     sendString(USART, "<p>");
     sendString(USART, tempReadStr);
     sendString(USART, "</p>");
+
   
     sendString(USART, webpageEnd);
   }
