@@ -1,4 +1,6 @@
 // STM32L432KC_RCC.h
+// Name: Lughnasa Miller
+// Date: 6.11.2025
 // Header for RCC functions
 
 #ifndef STM32L4_RCC_H

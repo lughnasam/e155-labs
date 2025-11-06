@@ -1,4 +1,6 @@
 // STM32L432KC_FLASH.h
+// Name: Lughnasa Miller
+// Date: 6.11.2025
 // Header for FLASH functions
 
 #ifndef STM32L4_FLASH_H

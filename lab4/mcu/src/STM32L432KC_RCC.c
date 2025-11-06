@@ -1,8 +1,11 @@
 // STM32L432KC_RCC.c
+// Name: Lughnasa Miller
+// Date: 6.11.2025
 // Source code for RCC functions
 
 #include "STM32L432KC_RCC.h"
 
+// configure PLL clock
 void configurePLL() {
     // Set clock to 80 MHz
     // Output freq = (src_clk) * (N/M) / R
@@ -42,6 +45,7 @@ void configurePLL() {
     while ((RCC->CR >> 25 & 1) != 1);
 }
 
+// enable clock as PLL clock
 void configureClock(){
     // Configure and turn on PLL
     configurePLL();

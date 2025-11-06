@@ -1,4 +1,6 @@
-// STM32F401RE_TIM.h
+// STM32L432KC_TIM.h
+// Name: Lughnasa Miller
+// Date: 6.11.2025
 // Header for TIM functions
 
 #ifndef STM32L4_TIM_H
@@ -6,7 +8,7 @@
 
 #include <stdint.h> // Include stdint header
 
-#define SystemCoreClock 4000000
+#define SystemCoreClock 80000000
 #define PWM_PSC 15
 
 #define TIM15_BASE (0x40014000UL) 

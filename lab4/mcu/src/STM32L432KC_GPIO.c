@@ -1,10 +1,12 @@
 // STM32L432KC_GPIO.c
+// Name: Lughnasa Miller
+// Date: 6.11.2025
 // Source code for GPIO functions
 
 #include "STM32L432KC_GPIO.h"
 #include "STM32L432KC_RCC.h"
 
-
+//set pinmode for given GPIO pin
 void pinMode(int pin, int function) {
     switch(function) {
         case GPIO_INPUT:
@@ -24,14 +26,17 @@ void pinMode(int pin, int function) {
     }
 }
 
+// read pin value
 int digitalRead(int pin) {
     return ((GPIO->IDR) >> pin) & 1;
 }
 
+// update pin value
 void digitalWrite(int pin, int val) {
     GPIO->ODR |= (1 << pin);
 }
 
+//toggle pin value
 void togglePin(int pin) {
     // Use XOR to toggle
     GPIO->ODR ^= (1 << pin);

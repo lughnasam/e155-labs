@@ -122,6 +122,7 @@ const int notes[][2] = {
 {440,	500},
 {  0,	0}};
 
+// pitch in Hz, duration in ms
 int best_song[][2] = {
 {494, 250},
 {330, 250},
@@ -139,10 +140,6 @@ int best_song[][2] = {
 {370, 250},
 {330, 250},
 {370, 250},
-{494, 250},
-{330, 250},
-{494, 250},
-{330, 250},
 {494, 250},
 {330, 250},
 {494, 250},
@@ -195,14 +192,13 @@ int best_song[][2] = {
 };
 
 int main(void) {
+    // set up 80 MHz clk
     configureFlash();
-
-    //configureClock();
+    configureClock();
 
     // enable GPIO clk, config pin
-    RCC->APB2ENR |= (1 << 0); // gpioa clock domain
-    pinMode(PA6, GPIO_ALT); // gpio alt function
-    GPIO->AFRL &= ~(0b1111 << 24); // reset gpio alt function
+    RCC->AHB2ENR |= (1 << 0); // gpioa clock domain
+    pinMode(6, GPIO_ALT); // gpio alt function
     GPIO->AFRL |= (0b1110 << 24); // PWM mode
 
     //enable timers clk
@@ -212,25 +208,25 @@ int main(void) {
     initTIM(TIM15);
     initPWM(TIM16);
 
-    // play Fur Elise
-    for(int i = 0; i < (sizeof(notes)/sizeof(notes[0])); i++) {
-        // set PWM freq
-        setPWMFreq(TIM16, notes[i][0]);
-
-        // delay for note duration
-        delay_millis(TIM15, notes[i][1]);
-    }
-
-    // wait 1 second
-    delay_millis(TIM15, 1000);
-
-    //// play American Teenager
-    //for(int i = 0; i < (sizeof(best_song)/sizeof(best_song[0])); i++) {
-    //    //set PMW freq
-    //    setPWMFreq(TIM16, best_song[i][0]);
+    //// play Fur Elise
+    //for(int i = 0; i < (sizeof(notes)/sizeof(notes[0])); i++) {
+    //    // set PWM freq
+    //    setPWMFreq(TIM16, notes[i][0]);
 
     //    // delay for note duration
-    //    delay_millis(TIM15, best_song[i][1]);
+    //    delay_millis(TIM15, notes[i][1]);
     //}
+
+    //// wait 1 second
+    //delay_millis(TIM15, 1000);
+
+    // play American Teenager
+    for(int i = 0; i < (sizeof(best_song)/sizeof(best_song[0])); i++) {
+        //set PMW freq
+        setPWMFreq(TIM16, best_song[i][0]);
+
+        // delay for note duration
+        delay_millis(TIM15, best_song[i][1]);
+    }
 	
 }
