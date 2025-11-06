@@ -4,9 +4,10 @@
 #include "STM32L432KC_TIM.h"
 #include "STM32L432KC_RCC.h"
 
-#define PWM_PSC 16
 
-void initTIM(TIM_TypeDef * TIMx){
+void initTIM(TIMx_TypeDef * TIMx) {
+  //enable clock
+
   // Set prescaler to give 1 ms time base
   uint32_t psc_div = (uint32_t) ((SystemCoreClock/1e3));
 
@@ -18,35 +19,48 @@ void initTIM(TIM_TypeDef * TIMx){
   TIMx->CR1 |= 1; // Set CEN = 1
 }
 
-void initPWM(TIM_TypeDef * TIMx, uint32_t freq){
+void initPWM(TIMx_TypeDef * TIMx) {
+  // set timers to GPIO pins, PWM mode
+  TIMx->CCMR1 &= ~(0b111 << 4); //reset field
+  TIMx->CCMR1 |= (0b110 << 4); // PWM mode
+  TIMx->CCER |= (1 << 0); // OC1 signal
+  TIMx->CCMR1 |= (1 << 3); // output compare 1 preload en
+  TIMx->BDTR |= (1 << 15); // set MOE
+
+  // update shadow register
+  TIMx->EGR |= (1 << 0);
+
+  // enable the counter
+  TIMx->CR1 |= (1 << 0);
+
+  
+}
+
+void setPWMFreq(TIMx_TypeDef * TIMx, uint32_t freq){
+  // calculate prescaler
   uint32_t psc_div = (uint32_t) ((SystemCoreClock/1e3));
 
   // set prescaler division factor
-  TIMx->PSC = PWM_PSC - 1;
+  //TIMx->PSC = PWM_PSC - 1;
 
-  // set auto reload value
-  TIMx->ARR = SystemCoreClock / (PWM_PSC * freq);
+  // calculate auto-reload value
+  uint32_t arr = SystemCoreClock / (freq);
 
-  // enable autoreload
-  TIMx->CR1 |= (1 << 7);
-
-  // enable PWM mode
-  TIMx->CCMR1 &= ~(1 << 16);
-  TIMx->CCMR1 &= ~(0b111 << 4);
-  TIMx->CCMR1 |= (0b110 << 4);
-
-  // set duty cycle
-  TIMx->CCR1 = (TIMx->ARR + 1) / 2;
+  // set parameters
+  TIMx->ARR = arr; // autoreload
+  TIMx->PSC = PWM_PSC; // prescaler
+  TIMx->CCR1 = arr / 2; // pwm duty cycle
 
   // update values for shadow register
   TIMx->EGR |= 1;
 }
 
-void delay_millis(TIM_TypeDef * TIMx, uint32_t ms){
+void delay_millis(TIMx_TypeDef * TIMx, uint32_t ms){
   TIMx->ARR = ms;// Set timer max count
   TIMx->EGR |= 1;     // Force update
   TIMx->SR &= ~(0x1); // Clear UIF
   TIMx->CNT = 0;      // Reset count
 
   while(!(TIMx->SR & 1)); // Wait for UIF to go high
+  TIMx->SR &= ~(1 << 0);
 }

@@ -35,6 +35,7 @@ int inString(char request[], char des[]) {
 	return -1;
 }
 
+
 int updateLEDStatus(char request[])
 {
 	int led_status = 0;
@@ -51,6 +52,7 @@ int updateLEDStatus(char request[])
 	return led_status;
 }
 
+//update resolution based on request
 int updateReqStatus(char request[]) {
  int precStatus = 0;
  if (inString(request, "8biton") == 1) {
@@ -129,6 +131,7 @@ int main(void) {
     else if (led_status == 0)
       sprintf(ledStatusStr,"LED is off!");
 
+    //update resolution
     updateReqStatus(request);
 
     // finally, transmit the webpage over UART

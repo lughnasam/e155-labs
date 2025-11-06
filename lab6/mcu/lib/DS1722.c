@@ -38,6 +38,7 @@ void ds1722_init(int precision){
     digitalWrite(SPI_CE, PIO_LOW);
 }
 
+// this function reads the upper and lower bits of
 float ds1722_temp_read(void) {
     //read upper bits
     digitalWrite(SPI_CE, PIO_HIGH);

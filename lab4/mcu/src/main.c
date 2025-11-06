@@ -195,27 +195,42 @@ int best_song[][2] = {
 };
 
 int main(void) {
-    // set clock to PLL (80 MHz)
-    configureClock();
+    configureFlash();
 
-    // initialize timers
-    initTIM(TIM16);
+    //configureClock();
 
-    // enable GPIO pin for PWM signal
-    pinMode(6, GPIO_ALT);
-
-    // enable 
-    RCC->AHB2ENR |= (1 << 0);
+    // enable GPIO clk, config pin
+    RCC->APB2ENR |= (1 << 0); // gpioa clock domain
+    pinMode(PA6, GPIO_ALT); // gpio alt function
+    GPIO->AFRL &= ~(0b1111 << 24); // reset gpio alt function
+    GPIO->AFRL |= (0b1110 << 24); // PWM mode
 
     //enable timers clk
     RCC->APB2ENR |= (0b11 << 16);
 
-    for(int i = 0; i < 108; i++) {
-        // generate PWM
-        initPWM(TIM15, notes[i][0]);
+    // initialize timers
+    initTIM(TIM15);
+    initPWM(TIM16);
 
-        // delay for x time
-        delay_millis(TIM16, notes[i][1]);
+    // play Fur Elise
+    for(int i = 0; i < (sizeof(notes)/sizeof(notes[0])); i++) {
+        // set PWM freq
+        setPWMFreq(TIM16, notes[i][0]);
+
+        // delay for note duration
+        delay_millis(TIM15, notes[i][1]);
     }
+
+    // wait 1 second
+    delay_millis(TIM15, 1000);
+
+    //// play American Teenager
+    //for(int i = 0; i < (sizeof(best_song)/sizeof(best_song[0])); i++) {
+    //    //set PMW freq
+    //    setPWMFreq(TIM16, best_song[i][0]);
+
+    //    // delay for note duration
+    //    delay_millis(TIM15, best_song[i][1]);
+    //}
 	
 }
