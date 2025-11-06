@@ -2,7 +2,7 @@
 // Lughnasa Miller
 // lumiller@hmc.edu
 // 23.10.25
-// This file is a driver for reading temperature from a DS1722 board
+// This header file is for a driver for reading temperature from a DS1722 board
 
 #include "STM32L432KC.h"
 #include "STM32L432KC_SPI.h"

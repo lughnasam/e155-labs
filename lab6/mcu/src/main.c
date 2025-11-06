@@ -1,8 +1,8 @@
 /*
-File: Lab_6_JHB.c
-Author: Josh Brake
-Email: jbrake@hmc.edu
-Date: 9/14/19
+File: main.c
+Author: Josh Brake/Lughnasa Miller
+Email: jbrake@hmc.edu/lumiller@hmc.edu
+Date: 5.11.25
 */
 
 
