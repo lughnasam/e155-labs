@@ -188,7 +188,7 @@ int best_song[][2] = {
 {294, 250},
 {247, 250},
 {330, 250},
-{494, 250}
+{494, 500}
 };
 
 int main(void) {
@@ -208,16 +208,16 @@ int main(void) {
     initTIM(TIM15);
     initPWM(TIM16);
 
-    //// play Fur Elise
+    // play Fur Elise
     //for(int i = 0; i < (sizeof(notes)/sizeof(notes[0])); i++) {
-    //    // set PWM freq
+    //     set PWM freq
     //    setPWMFreq(TIM16, notes[i][0]);
 
-    //    // delay for note duration
+    //     delay for note duration
     //    delay_millis(TIM15, notes[i][1]);
     //}
 
-    //// wait 1 second
+    // wait 1 second
     //delay_millis(TIM15, 1000);
 
     // play American Teenager
@@ -225,8 +225,10 @@ int main(void) {
         //set PMW freq
         setPWMFreq(TIM16, best_song[i][0]);
 
-        // delay for note duration
+        //delay for note duration
         delay_millis(TIM15, best_song[i][1]);
     }
+
+    setPWMFreq(TIM16, 0);
 	
 }

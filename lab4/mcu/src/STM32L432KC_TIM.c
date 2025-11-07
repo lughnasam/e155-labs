@@ -49,7 +49,7 @@ void setPWMFreq(TIMx_TypeDef * TIMx, uint32_t freq){
   TIMx->PSC = PWM_PSC - 1;
 
   // calculate auto-reload value
-  uint32_t arr = SystemCoreClock / (PWM_PSC * freq);
+  uint32_t arr = SystemCoreClock / ((PWM_PSC + 1) * freq);
 
   // set parameters
   TIMx->ARR = arr; // autoreload
